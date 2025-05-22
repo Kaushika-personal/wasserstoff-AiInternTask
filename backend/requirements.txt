@@ -1,0 +1,37 @@
+# FastAPI and Uvicorn
+fastapi>=0.95.2
+uvicorn[standard]>=0.18.3
+
+# Pydantic and Settings
+pydantic>=1.9,<2.0 # Pinning to Pydantic v1.x for wider compatibility with older libraries
+python-dotenv>=0.13
+
+# LangChain Core and Integrations
+langchain>=0.1.0,<0.2.0 # Pinning to a recent but not bleeding-edge LangChain
+langchain-google-genai # For Gemini
+langchain-community # For the older Chroma import
+
+# Vector Store - CRITICAL VERSIONS
+chromadb==0.4.18 # Known to be more lenient with SQLite, needs numpy < 2.0
+numpy==1.26.4 # Last stable version before NumPy 2.0
+
+# OCR
+paddleocr
+paddlepaddle # CPU version
+
+# Document Parsers
+PyMuPDF
+python-docx
+Pillow
+
+# Database (SQLAlchemy for metadata)
+sqlalchemy
+
+# Other Utilities
+scikit-learn # For TF-IDF and clustering
+tiktoken # For LangChain token counting
+tenacity # For retries, often a LangChain dependency
+python-multipart # For FastAPI file uploads
+
+# Optional: If you were trying pysqlite3, but it failed to build
+# pysqlite3
